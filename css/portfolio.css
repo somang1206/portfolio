@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root[color-theme="pink"]{
+    --background:#ffb6ea; /*--background라는 변수에 #ffb6ea를 준다 . = const background = #ffb6ea*/
+    --boxColor:#fff;
+    --fontColor:#222;
+}
+
+:root[color-theme="dark"]{
+    --background:#000;
+    --boxColor:#2f2f2f;
+    --fontColor:#fff;
+} /*속성을 줘서 css를 변수화 한 것 >> 이것들을 css에 가져다 쓸 수 있음. 아래에 있음*/
+
+
+body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+header{
+    width: 100%;
+    height: 3rem;
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 3rem;
+}
+
+header > span{
+    cursor: pointer;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background); /*위에 설정했던 변수를 가져다 쓴 것*/
+}
+
+#smallCircle{
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    top: -10rem;
+    left: -10rem;
+    opacity: 0.2;
+    border-radius: 50%;
+    background-color: #fff;
+}
+#bigCircle{
+    position: absolute;
+    width: 46rem;
+    height: 46rem;
+    bottom: -5rem;
+    right: -18rem;
+    opacity: 0.2;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+
+#blurheader{
+    z-index: 100;
+    width: 100%;
+    height: 3rem;
+    background-color: #fff;
+    opacity: 0.4;
+    position: fixed;
+    display: none;
+}

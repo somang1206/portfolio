@@ -1,0 +1,134 @@
+/*:root -> 가상선택자. 최상위에 있는 요소. ->document.documentElement와 같은 의미 */
+:root[color-theme="pink"]{
+    --background:#ffb6ea; /*--background라는 변수에 #ffb6ea를 준다*/
+    --boxColor:#fff;
+    --fontColor:#222;
+}/*html 에 color-theme를 pink줬을 때 --background라는 변수 선언했고, 이걸 css에서 쓸 수 있는 것*/
+
+:root[color-theme="dark"]{
+    --background:#000;
+    --boxColor:#2f2f2f;
+    --fontColor:#fff;
+} /*속성을 줘서 css를 변수화 한 것*/
+
+/*
+let --background;
+let --fontColor;
+
+ if(root.getAttribute("color-theme") === "pink"){
+    --background = #ffb6ea
+    --fontColor = #222
+
+ }else if(root.getAttribute("color-theme") === "dark"){
+    --background = #000
+    --fontColor = #fff
+}
+*/
+
+.bold{
+    font-weight: bold;
+}
+
+.whiteFont {
+    color: #fff;
+}
+
+.whiteBackground{
+    background-color: var(--boxColor);
+}
+
+.fontsize2rem{
+    font-size: 2rem;
+}
+.fontsize5rem{
+    font-size: 5rem;
+}
+.fontsize7rem{
+    font-size: 7rem;
+}
+.fontsize8rem{
+    font-size: 8rem;
+}
+.fontsize10rem{
+    font-size: 10rem;
+}
+.fontsize15rem{
+    font-size: 15rem;
+}
+
+.lin80{
+    line-height: 80%;
+}
+
+.whiteboxWidth{
+    width: 20rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.whiteBox7rem{
+    height: 7rem;
+}
+.whiteBox13rem{
+    height: 13rem;
+}
+.whiteBox17rem{
+    height: 17rem;
+}
+.whiteBox20rem{
+    height: 20rem;
+}
+
+.centerTextBox10{
+    padding-top: 1.5rem;
+    width: 100%;
+    height: 15rem;
+    text-align: center;
+}
+
+.subject{
+    padding-top: 2rem;
+    padding-left: 6rem;
+}
+
+.flexAlignStart{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexAlignStart > div{
+    margin-left: 4rem;
+}
+.flexAlignStart > div > div{
+    margin-bottom: 1rem;
+}
+
+#projectBox{
+    width: 100%;
+    height: 90vh;
+    font-size: 3rem;
+    font-weight: bold;
+    color:var(--fontColor)
+}
+
+
+#aboutme{
+    color:var(--fontColor) 
+}
+
+.contact {
+    height: 70%;
+}
+
+.footer{
+    height: 30%;
+}
+

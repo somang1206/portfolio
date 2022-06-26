@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <div>
+        <section id="wrap">
+            <div id="blurheader"></div>
+            <header><span id="darkMode" class="whiteFont">DARK</span></header>
+            <div id="smallCircle"></div>
+            <div class="fontsize15rem whiteFont bold subject">Hi,</div>
+            <div class="fontsize10rem whiteFont bold subject line80">IM SO <br>MANG</div>
+            <div id="bigCircle" data-id="somang"></div>
+        </section>
+        <section>
+            <div class="whiteFont fontsize5rem bold centerTextBox10">SOMANG'S PORTFOLIO</div>
+            <div id="aboutme" class="bold centerTextBox10 fontsize5rem whiteBackground" >ABOUT ME</div>
+            <div>
+                <p class="fontsize2rem whiteFont bold subject">SKILLS</p> 
+                <div class="flexAlignStart">
+                    <div class="whiteboxWidth whiteBox17rem"></div>
+                    <div>
+                        <div class="whiteboxWidth whiteBox7rem"></div>
+                        <div class="whiteboxWidth whiteBox13rem"></div>
+                    </div>
+                    <div class="whiteboxWidth whiteBox13rem"></div>
+                    <div class="whiteboxWidth whiteBox20rem"></div>
+                </div>
+            </div>
+    
+        </section>
+        <section class="flexCenter">
+            <div id="projectBox" class="whiteBackground flexCenter">PROJECT01</div>
+        </section>
+        <section>
+            <div class="whiteFont fontsize5rem bold subject contact">Contact Me</div>
+            <div class="footer whiteBackground"></div>
+        </section>
+    </div>
+    <script>
+        window.onscroll = function(){
+            if(
+                document.body.scrollTop > 48 || /*||는 또는, 48은 48px이라는 뜻 헤더가 3rem인데 이게 48px임*/
+                document.documentElement.scrollTop >48
+            ){
+                document.getElementById("blurheader").style.display = "block";
+            }else{
+                document.getElementById("blurheader").style.display = "none";
+            }
+        }// 스크롤하면 생겨나는 메뉴
+
+
+        window.onload = function (){
+            console.log(document.getElementById("bigCircle").getAttribute("data-id"));
+            console.log(document.getElementById("bigCircle").getAttribute("class"));
+            //html이라고 생각하면 됨<html lang="en" color-theme="pink">이렇게 준거나 마찬가지
+            //이 때 color-theme는 내가 만들어낸 것. 원래 있는 속성은 f12-properties에서 확인가능
+            document.documentElement.setAttribute("color-theme", "pink");
+            //최상위(html이라고 생각하면 됨) root에 이 속성을 셋팅해준 것! 
+        };
+
+        let darkMode = document.getElementById("darkMode");
+        //setAttribute : 속성 설정
+        //getAttribute : 속성값(키)="값" 즉, 키값, 속성값(class,id...) 가져오는 것! 
+
+        darkMode.addEventListener("click", (e)=>{
+            if(e.target.innerText === "DARK"){
+                document.documentElement.setAttribute("color-theme", "dark");
+                e.target.innerText = "PINK";
+            }else{
+                document.documentElement.setAttribute("color-theme", "pink");
+                e.target.innerText = "DARK";
+            }
+        })
+
+        //e ===> 이벤트가 일어난 객체가 뭔지 알려줌
+        //e.target ==> 일어난 객체를 선택
+        //e.target.innerText =>일어난 개체를 선택해서 innerText속성을 선택
+    </script>
+</body>
+</html>
